@@ -10,6 +10,9 @@
 
 MediAI is an advanced healthcare platform that combines artificial intelligence with practical medical services. It features an intelligent virtual assistant named "Medi" that provides medical guidance, symptom assessment, and seamless appointment booking through natural conversation.
 
+## Smple images
+(https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-08-53.png)
+
 ## 🌟 Key Features
 
 ### 🤖 AI-Powered Virtual Assistant
@@ -265,4 +268,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by [Ritik Raj](https://github.com/ritigit7)**
+**Made by [Ritik](https://github.com/ritigit7)**
