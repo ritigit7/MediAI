@@ -11,13 +11,18 @@
 MediAI is an advanced healthcare platform that combines artificial intelligence with practical medical services. It features an intelligent virtual assistant named "Medi" that provides medical guidance, symptom assessment, and seamless appointment booking through natural conversation.
 
 ## Smple images
-(https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-08-53.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-08-53.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-25.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-46.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-17-05.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-28-04.png)
+![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-29-11.png)
 
 ## 🌟 Key Features
 
 ### 🤖 AI-Powered Virtual Assistant
 - **Intelligent Symptom Assessment**: Provides basic medical guidance for common conditions
-- **Natural Language Processing**: Understands and responds to health queries in conversational tone
+- **Natural Language Processing**: Understands and responds to health queries in a conversational tone
 - **Emergency Detection**: Identifies life-threatening symptoms and directs to emergency services
 - **Multi-modal Support**: Text and voice interaction capabilities
 
