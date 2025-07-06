@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Plus Medical Center | AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --secondary-light: #34d399;
+            --dark: #1e293b;
+            --dark-gray: #64748b;
+            --light: #f8fafc;
+            --gray: #e2e8f0;
+            --light-gray: #f1f5f9;
+            --red: #ef4444;
+            --amber: #f59e0b;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15);
+            --rounded-sm: 0.5rem;
+            --rounded-md: 1rem;
+            --rounded-lg: 1.5rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            position: sticky;
+            top: 0;
+            background-color: rgba(248, 250, 252, 0.95);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+        
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2.25rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--rounded-sm);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-dark);
+        }
+        
+        .contact-item i {   
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: center;
+            background: white;
+            border-radius: var(--rounded-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray);
+            background-image: radial-gradient(circle at 10% 20%, rgba(235, 245, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 90%);
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--dark), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--dark-gray);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+        
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: var(--rounded-sm);
+            transition: var(--transition);
+        }
+        
+        .highlight-item:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .highlight-icon {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .highlight-item:hover .highlight-icon {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .highlight-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .widget-container {
+            background: white;
+            border-radius: var(--rounded-lg);
+            box-shadow: var(--shadow-xl);
+            padding: 2rem;
+            height: 100%;
+            border: 1px solid var(--gray);
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .widget-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .widget-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .widget-icon {
+            color: var(--primary);
+            font-size: 1.75rem;
+        }
+        
+        .widget-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .services-section {
+            margin: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 1rem auto 0;
+            border-radius: 3px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--rounded-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .service-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: var(--secondary);
+        }
+        
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .service-description {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-section {
+            background: white;
+            border-radius: var(--rounded-lg);
+            padding: 3rem;
+            margin: 4rem 0;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray);
+            background-image: radial-gradient(circle at 10% 20%, rgba(235, 245, 255, 0.5) 0%, rgba(255, 255, 255, 0.9) 90%);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+        
+        .info-group {
+            margin-bottom: 2rem;
+        }
+        
+        .info-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .info-title i {
+            font-size: 1.5rem;
+        }
+        
+        .info-list {
+            list-style: none;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding-left: 0.5rem;
+            position: relative;
+        }
+        
+        .info-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+        }
+        
+        .info-list strong {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        footer {
+            background: linear-gradient(to right, var(--dark), #1a365d);
+            color: white;
+            padding: 4rem 0 0;
+            margin-top: 5rem;
+            position: relative;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, white, var(--gray));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .footer-about {
+            max-width: 300px;
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 0.25rem 0;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer-contact-icon {
+            color: var(--secondary-light);
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        .emergency-banner {
+            background: linear-gradient(to right, var(--red), #dc2626);
+            color: white;
+            padding: 1.25rem;
+            border-radius: var(--rounded-sm);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            animation: pulse 2s infinite;
+            box-shadow: var(--shadow-md);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        
+        .emergency-icon {
+            font-size: 1.75rem;
+            animation: shake 1.5s infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .emergency-text {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .emergency-number {
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--rounded-sm);
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, var(--secondary), var(--secondary-light));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(to right, #0d9c6e, var(--secondary));
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                order: 2;
+            }
+            
+            .widget-container {
+                order: 1;
+                margin-bottom: 2rem;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                padding: 1rem 0;
+            }
+            
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero-title {
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-highlights {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.25rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .hero-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-section {
+                padding: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .emergency-banner {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                padding: 0.5rem;
+            }
+            
+            .info-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-hospital logo-icon"></i>
+                <div class="logo-text">HealthCare Plus</div>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-CARE (2273)</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Wellness Avenue</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@healthcareplus.com</span>
+                </div>
+            </div>
+        </header>
+        
+    
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Health Is Our Priority</h1>
+                <p class="hero-subtitle">
+                    Meet<strong> Medi</strong>, our AI healthcare assistant, available 24/7 to answer your medical questions, 
+                    provide basic guidance, and help you schedule appointments with our specialists.
+                </p>
+                
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="highlight-text">24/7 Availability</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="highlight-text">HIPAA Compliant</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="highlight-text">Instant Scheduling</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="highlight-text">Doctor-Verified Advice</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-video"></i> Virtual Visit
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Book Appointment
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+                <elevenlabs-convai 
+                id="my-agent"
+                agent-id="agent_01jynnrrzaeeg9hm6zyy058n3d"
+                dynamic-variables='{}'>
+                </elevenlabs-convai>
+            </div>
+
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+                const now = new Date();
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric', 
+                    hour: 'numeric', 
+                    minute: '2-digit', 
+                    hour12: true 
+                };
+                const currentDateTime = now.toLocaleString('en-US', options);
+
+                // Update the dynamic-variables attribute
+                const agentElement = document.getElementById("my-agent");
+                if (agentElement) {
+                    agentElement.setAttribute("dynamic-variables", JSON.stringify({ current_datetime: currentDateTime }));
+                }
+                });
+            </script>
+
+        <div class="services-section">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">
+                Comprehensive healthcare services designed to meet all your medical needs with compassion and expertise.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heartbeat service-icon"></i>
+                    <h3 class="service-title">Primary Care</h3>
+                    <p class="service-description">
+                        Comprehensive care for all ages, including preventive services, chronic disease management, 
+                        and routine check-ups.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-procedures service-icon"></i>
+                    <h3 class="service-title">Specialty Care</h3>
+                    <p class="service-description">
+                        Expert care in cardiology, dermatology, gastroenterology, orthopedics, pediatrics, 
+                        gynecology, and mental health.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-flask service-icon"></i>
+                    <h3 class="service-title">Diagnostic Services</h3>
+                    <p class="service-description">
+                        On-site laboratory testing, X-rays, ECG, ultrasound, and other diagnostic procedures 
+                        for accurate assessments.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ambulance service-icon"></i>
+                    <h3 class="service-title">Urgent Care</h3>
+                    <p class="service-description">
+                        Walk-in services for non-emergency conditions that require prompt attention outside 
+                        of regular office hours.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-medical service-icon"></i>
+                    <h3 class="service-title">Telemedicine</h3>
+                    <p class="service-description">
+                        Virtual consultations with our healthcare providers from the comfort of your home 
+                        or office.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pills service-icon"></i>
+                    <h3 class="service-title">Pharmacy Services</h3>
+                    <p class="service-description">
+                        Convenient on-site pharmacy for filling prescriptions and medication counseling.
+                    </p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2 class="section-title">Clinic Information</h2>
+            <p class="section-subtitle">
+                Everything you need to know about visiting our medical center
+            </p>
+            <div class="info-grid">
+                <div>
+                    <div class="info-group">
+                        <h3 class="info-title"><i class="fas fa-info-circle"></i> Basic Information</h3>
+                        <ul class="info-list">
+                            <strong>Name:</strong> HealthCare Plus Medical Center<br>
+                            <strong>Address:</strong> 123 Wellness Avenue, Medical District, City Center 10001<br>
+                            <strong>Phone:</strong> (555) 123-CARE (2273)<br>
+                            <strong>Email:</strong> appointments@healthcareplus.com<br>
+                            <strong>Website:</strong> www.healthcareplus.com<br>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3 class="info-title"><i class="fas fa-clock"></i> Hours of Operation</h3>
+                        <ul class="info-list">
+                            <strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM<br>
+                            <strong>Emergency Services:</strong> 24/7<br>
+                            <strong>Urgent Care:</strong> 8:00 AM - 8:00 PM daily<br>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="info-group">
+                        <h3 class="info-title"><i class="fas fa-credit-card"></i> Insurance & Payment</h3>
+                        <ul class="info-list">
+                            <strong>Accepted Insurance:</strong> Most major insurance plans including Blue Cross, Aetna, Cigna, Medicare, Medicaid<br>
+                            <strong>Payment Options:</strong> Cash, credit cards, payment plans available<br>
+                            <strong>Billing Questions:</strong> (555) 123-BILL (2455)<br>
+                            <strong>Financial Assistance:</strong> Available for qualifying patients<br>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3 class="info-title"><i class="fas fa-info-circle"></i> Additional Information</h3>
+                        <ul class="info-list">
+                            <strong>Parking:</strong> Free parking available on-site<br>
+                            <strong>Accessibility:</strong> Wheelchair accessible, ADA compliant<br>
+                            <strong>Languages:</strong> English, Spanish, Mandarin (interpreters available for other languages)<br>
+                            <strong>Patient Portal:</strong> Online access to medical records and test results<br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="emergency-banner">
+            <i class="fas fa-exclamation-triangle emergency-icon"></i>
+            <div class="emergency-text">
+                For medical emergencies, call <span class="emergency-number">911</span> or go to the nearest emergency room.
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">HealthCare Plus</div>
+                <p>Comprehensive healthcare services with a patient-centered approach. Our team of dedicated professionals is committed to your well-being.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Our Doctors</a></li>
+                    <li><a href="#">Patient Portal</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Primary Care</a></li>
+                    <li><a href="#">Specialty Care</a></li>
+                    <li><a href="#">Diagnostics</a></li>
+                    <li><a href="#">Urgent Care</a></li>
+                    <li><a href="#">Telemedicine</a></li>
+                    <li><a href="#">Wellness Programs</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="footer-title">Contact Us</h3>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                    <span>123 Wellness Avenue<br>City Center 10001</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone footer-contact-icon"></i>
+                    <span>(555) 123-CARE (2273)<br>Emergency: (555) 123-9111</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope footer-contact-icon"></i>
+                    <span>appointments@healthcareplus.com<br>support@healthcareplus.com</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 HealthCare Plus Medical Center. All rights reserved. | <a href="#" style="color: rgba(255, 255, 255, 0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255, 255, 255, 0.6);">Terms of Service</a>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+</body>
+</html>
