@@ -11,12 +11,7 @@
 MediAI is an advanced healthcare platform that combines artificial intelligence with practical medical services. It features an intelligent virtual assistant named "Medi" that provides medical guidance, symptom assessment, and seamless appointment booking through natural conversation.
 
 ## Smple images
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-08-53.png)
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-25.png)
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-46.png)
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-17-05.png)
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-28-04.png)
-![MediAI Screenshot](https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-29-11.png)
+<table> <tr> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-08-53.png" alt="Screenshot 1" width="400"/></td> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-25.png" alt="Screenshot 2" width="400"/></td> </tr> <tr> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-11-46.png" alt="Screenshot 3" width="400"/></td> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-27%2019-17-05.png" alt="Screenshot 4" width="400"/></td> </tr> <tr> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-28-04.png" alt="Screenshot 5" width="400"/></td> <td><img src="https://github.com/ritigit7/MediAI/blob/main/images/Screenshot%20from%202025-06-30%2010-29-11.png" alt="Screenshot 6" width="400"/></td> </tr> </table>
 
 ## 🌟 Key Features
 
