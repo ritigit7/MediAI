@@ -244,17 +244,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Google Cloud**: For serverless infrastructure
 - **OpenAI**: For conversational AI capabilities
 
-## 📞 Support
-
-### Documentation
-- [API Documentation](https://your-docs-link.com)
-- [User Guide](https://your-guide-link.com)
-- [FAQ](https://your-faq-link.com)
-
 ### Contact
-- **Email**: support@mediai.com
 - **GitHub Issues**: [Report Issues](https://github.com/ritigit7/MediAI/issues)
-- **Discord**: [Join Community](https://discord.gg/mediai)
+
 
 ### Technical Support
 - **Response Time**: < 24 hours
